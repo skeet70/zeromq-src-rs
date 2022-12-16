@@ -20,7 +20,7 @@ jobs:
       RUST_BACKTRACE: 1
     strategy:
       matrix:
-        build: [linux-glibc, linux-musl, linux-arm, macos, win-msvc, win-gnu]
+        build: [linux-glibc, linux-musl, macos, win-msvc, win-gnu]
         include:
         - build: linux-glibc
           os: ubuntu-22.04
