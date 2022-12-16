@@ -60,12 +60,12 @@ jobs:
     #   run: |
     #     rustup override set $(cat ./rust-toolchain.toml | grep channel | sed 's/channel = "//' | sed 's/"//')-x86_64-gnu
 
-    - name: Use Cross
-      shell: bash
-      if: matrix.os == 'ubuntu-22.04'
-      run: |
-        cargo install cross
-        echo "CARGO=cross" >> $GITHUB_ENV
+    # - name: Use Cross
+    #   shell: bash
+    #   if: matrix.os == 'ubuntu-22.04'
+    #   run: |
+    #     cargo install cross
+    #     echo "CARGO=cross" >> $GITHUB_ENV
 
     - name: set targets
       shell: bash
