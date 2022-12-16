@@ -28,9 +28,9 @@ jobs:
         - build: linux-musl
           os: ubuntu-22.04
           target: x86_64-unknown-linux-musl
-        - build: linux-arm
-          os: ubuntu-22.04
-          target: arm-unknown-linux-gnueabihf
+        # - build: linux-arm
+        #   os: ubuntu-22.04
+        #   target: arm-unknown-linux-gnueabihf
         - build: macos
           os: macos-12
           target: x86_64-apple-darwin
@@ -72,6 +72,8 @@ jobs:
       run: |
         echo "TARGET_FLAGS=--target ${{ matrix.target }}" >> $GITHUB_ENV
         echo "TARGET_DIR=./target/${{ matrix.target }}" >> $GITHUB_ENV
+        sudo apt install g++-arm-linux-gnueabihf
+        sudo apt install musl-dev
 
     - name: Show command used for Cargo
       run: |
